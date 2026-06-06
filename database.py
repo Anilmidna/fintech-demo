@@ -162,8 +162,13 @@ def setup_database():
         ))
 
     # Normal transactions: Days 1–7, daytime hours
+    # Exclude fraud-pattern user IDs from the random "noise" pool — otherwise
+    # their seeded patterns get diluted with random amounts/merchants, which
+    # breaks "always / exactly" claims used in the Module 2 investigation cases
+    # (e.g. U008 "always sends round amounts", U015 "always ₹9,800–9,999").
+    fraud_pattern_user_ids = {"U003", "U005", "U008", "U012", "U015"}
     normal_merchants = [f"M{i:03d}" for i in range(1, 11)]
-    normal_users = [f"U{i:03d}" for i in range(1, 16)]
+    normal_users = [f"U{i:03d}" for i in range(1, 16) if f"U{i:03d}" not in fraud_pattern_user_ids]
     random.seed(42)
 
     for day in range(7):
