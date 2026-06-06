@@ -121,16 +121,16 @@ QUESTIONS = [
     },
     {
         "num": 9,
-        "question": "Case 4 — Sleeping Giant: The dormant users had account_age_days of 3–8. What does that mean?",
+        "question": "Case 4 — Sleeping Giant: 'Dormant' users suddenly made 8+ txns/day AND their account_age_days was just 3–8. What's really going on?",
         "answers": [
-            "Genuine old customers returning",
-            "New real customers, nothing wrong",
-            "Freshly created mule accounts, not truly dormant",
-            "Accounts auto-created by the bank",
+            "Genuine old customers, just back after a break",
+            "A system glitch — ignore both numbers",
+            "Freshly created mule accounts disguised as dormant, now moving stolen money",
+            "New customers who got lucky with a big offer",
         ],
         "correct": "3",
         "time": 30,
-        "description": "3–8 days old = brand new accounts marked dormant. Classic mule account setup for money laundering.",
+        "description": "Real dormant accounts are OLD accounts gone quiet. These are 3–8 days old — brand new. Label them 'dormant' to look harmless, then burst into activity to launder money. That's a mule account.",
     },
     {
         "num": 10,

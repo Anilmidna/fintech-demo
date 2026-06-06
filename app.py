@@ -142,10 +142,10 @@ FRAUD_CASES = [
         "id": 4,
         "difficulty": "🟡 Medium",
         "title": "The Sleeping Giant Wakes",
-        "story": "Dormant accounts that suddenly burst into activity are a classic sign of account takeover. Someone hacked into old accounts and is draining them.",
-        "question": "Find users where is_dormant is 1 in the users table. Then show all their transactions. How many did they make in a single day?",
-        "fraud_type": "Dormant Account Reactivation",
-        "what_to_look_for": "Dormant users making 8+ transactions in one day is very suspicious.",
+        "story": "A few accounts are flagged 'dormant' — meaning they've been inactive for a long time. Suddenly, they each fire off 8+ transactions in a single day. Genuine dormant accounts don't just wake up and go on a spending spree. Something's off — let's check how 'old' these accounts really are.",
+        "question": "Find users where is_dormant = 1. For each, show account_age_days AND how many transactions they made in a single day. What do BOTH numbers tell you?",
+        "fraud_type": "Mule Account (fake-dormant setup)",
+        "what_to_look_for": "These 'dormant' accounts are only 3-8 days old — that's not dormant, that's brand new. Fraudsters open fresh accounts, label them dormant to look harmless, then activate them in a burst (8+ txns/day) to move stolen money. One red flag (sudden burst) plus one giveaway (impossibly young 'old' account) = the same scam.",
     },
     # HARD
     {
